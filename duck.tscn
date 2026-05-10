@@ -105,18 +105,20 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r8k62"]
-radius = 11.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1dtq"]
+radius = 15.0
+height = 52.0
 
 [node name="Duck" type="CharacterBody2D" unique_id=512657569]
 script = ExtResource("1_v1dtq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1547883705]
 position = Vector2(0, -4)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_i4v4m")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.14786965
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1826563603]
-shape = SubResource("CircleShape2D_r8k62")
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_v1dtq")
