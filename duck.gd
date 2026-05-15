@@ -10,9 +10,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		$AnimatedSprite2D.pause()
+		$Visuals/AnimatedSprite2D.pause()
 	else:
-		$AnimatedSprite2D.play()
+		$Visuals/AnimatedSprite2D.play()
 		
 
 	# Handle jump.
@@ -23,15 +23,15 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		$AnimatedSprite2D.animation = "walk"
+		$Visuals/AnimatedSprite2D.animation = "walk"
 		velocity.x = direction * SPEED
 		if velocity.x > 0:
-			$AnimatedSprite2D.flip_h = false
+			$Visuals.scale.x = 1
 		if velocity.x < 0:
-			$AnimatedSprite2D.flip_h = true
+			$Visuals.scale.x = -1
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		$AnimatedSprite2D.animation = "idle"
+		$Visuals/AnimatedSprite2D.animation = "idle"
 		
 	position.x = clamp(position.x, 0 + $CollisionShape2D.shape.radius,
 		screensize.x - $CollisionShape2D.shape.radius)
