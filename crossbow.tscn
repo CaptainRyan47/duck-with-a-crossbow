@@ -94,8 +94,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Crossbow" type="AnimatedSprite2D" unique_id=1195264221]
-scale = Vector2(0.1, 0.1)
+[node name="Crossbow" type="Area2D" unique_id=743928037]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1195264221]
+position = Vector2(0.99999994, 0)
 sprite_frames = SubResource("SpriteFrames_0s0e8")
-frame = 9
-frame_progress = 0.10261266
+frame = 1
+frame_progress = 0.6964606
