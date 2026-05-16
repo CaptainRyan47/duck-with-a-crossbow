@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bewd0"]
 size = Vector2(320, 40)
 
-[node name="Bolt" type="Area2D" unique_id=1332763453]
+[node name="Bolt" type="Area2D" unique_id=339689169]
 script = ExtResource("1_v78vr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=589733800]
@@ -16,3 +16,8 @@ shape = SubResource("RectangleShape2D_bewd0")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1285762971]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_bewd0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1142023051]
+rect = Rect2(-16, -2, 32, 4)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

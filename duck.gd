@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var screensize = Vector2(1280,720)
+@export var bolt : PackedScene
 
 
 func _physics_process(delta: float) -> void:
@@ -14,13 +15,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		$Visuals/AnimatedSprite2D.play()
 		
-
+	if Input.is_action_just_pressed("fire"):
+		shoot()
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		$Visuals/AnimatedSprite2D.animation = "walk"
@@ -36,3 +38,9 @@ func _physics_process(delta: float) -> void:
 	position.x = clamp(position.x, 0 + $CollisionShape2D.shape.radius,
 		screensize.x - $CollisionShape2D.shape.radius)
 	move_and_slide()
+
+
+func shoot():
+	var b = bolt.instantiate()
+	get_tree().root.add_child(b)
+	b.start($Visuals/Marker2D.global_transform)

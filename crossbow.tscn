@@ -94,7 +94,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Crossbow" type="Area2D" unique_id=743928037]
+[node name="Crossbow" type="Node2D" unique_id=1929069618]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1195264221]
 position = Vector2(0.99999994, 0)
