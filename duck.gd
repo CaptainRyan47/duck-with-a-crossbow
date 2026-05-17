@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var screensize = Vector2(1280,720)
+var pointerPosition = Vector2.ZERO
 @export var bolt : PackedScene
 
 

@@ -7,6 +7,7 @@ var velocity = Vector2.ZERO
 # Called when created
 func start(_transform):
 	transform = _transform
+	look_at(get_global_mouse_position())
 	velocity = transform.x * speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

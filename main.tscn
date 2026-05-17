@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://1ho7sjnjtvu6" path="res://world.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dxqgj6lbdm5fp" path="res://duck.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://vpjf6tqjee03" path="res://crosshair.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node" unique_id=475654386]
 
@@ -9,3 +10,5 @@
 
 [node name="Duck" parent="." unique_id=512657569 instance=ExtResource("2_h2yge")]
 position = Vector2(72, 549)
+
+[node name="Crosshair" parent="." unique_id=31167120 instance=ExtResource("3_h2yge")]

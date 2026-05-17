@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dc83y3sqxqpvj" path="res://assets/ducky_3_spritesheet.png" id="1_r8k62"]
 [ext_resource type="Script" uid="uid://b1eakmr5gkl7c" path="res://duck.gd" id="1_v1dtq"]
 [ext_resource type="PackedScene" uid="uid://bgypwqlh77w4d" path="res://bolt.tscn" id="2_qigen"]
+[ext_resource type="PackedScene" uid="uid://vpjf6tqjee03" path="res://crosshair.tscn" id="3_co3ja"]
 [ext_resource type="PackedScene" uid="uid://wic6gmry4ded" path="res://crossbow.tscn" id="3_mbejg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8k62"]
@@ -114,6 +115,7 @@ height = 70.0
 [node name="Duck" type="CharacterBody2D" unique_id=512657569]
 script = ExtResource("1_v1dtq")
 bolt = ExtResource("2_qigen")
+crosshair = ExtResource("3_co3ja")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=449303600]
 
