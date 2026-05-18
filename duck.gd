@@ -4,7 +4,6 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var screensize = Vector2(1280,720)
-var pointerPosition = Vector2.ZERO
 @export var bolt : PackedScene
 
 
@@ -25,23 +24,27 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
+	var mouse = get_global_mouse_position()
 	if direction:
 		$Visuals/AnimatedSprite2D.animation = "walk"
 		velocity.x = direction * SPEED
-		if velocity.x > 0:
-			$Visuals.scale.x = 1
-		if velocity.x < 0:
-			$Visuals.scale.x = -1
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$Visuals/AnimatedSprite2D.animation = "idle"
 		
 	position.x = clamp(position.x, 0 + $CollisionShape2D.shape.radius,
 		screensize.x - $CollisionShape2D.shape.radius)
+	
+	if mouse.x - position.x > 0:
+			$Visuals.scale.x = 1
+	if mouse.x - position.x < 0:
+			$Visuals.scale.x = -1
+			
+	$Visuals/Crossbow.look_at(mouse)
 	move_and_slide()
 
 
 func shoot():
 	var b = bolt.instantiate()
 	get_tree().root.add_child(b)
-	b.start($Visuals/Marker2D.global_transform)
+	b.start($Visuals/Crossbow/Marker2D.global_transform)

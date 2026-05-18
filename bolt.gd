@@ -7,6 +7,7 @@ var velocity = Vector2.ZERO
 # Called when created
 func start(_transform):
 	transform = _transform
+	scale = Vector2(1,1)
 	look_at(get_global_mouse_position())
 	velocity = transform.x * speed
 
