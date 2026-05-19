@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed = 1600
-var _gravity = 400
+var _gravity = 0
 var velocity = Vector2.ZERO
 
 # Called when created

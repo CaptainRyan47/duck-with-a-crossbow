@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://cu1hxb2vxc3pq"]
 
 [ext_resource type="PackedScene" uid="uid://1ho7sjnjtvu6" path="res://world.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dng1jmq4fcx30" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dxqgj6lbdm5fp" path="res://duck.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://t5bfphul2ymb" path="res://bat.tscn" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://vpjf6tqjee03" path="res://crosshair.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node" unique_id=475654386]
+script = ExtResource("1_1bvp3")
+bat = ExtResource("2_lquwl")
 
 [node name="World" parent="." unique_id=1601685185 instance=ExtResource("1_0xm2m")]
 
 [node name="Duck" parent="." unique_id=512657569 instance=ExtResource("2_h2yge")]
 position = Vector2(72, 549)
 
-[node name="Crosshair" parent="." unique_id=31167120 instance=ExtResource("3_h2yge")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1837611204]
+
+[node name="Crosshair" parent="CanvasLayer" unique_id=31167120 instance=ExtResource("3_h2yge")]
+z_as_relative = false
