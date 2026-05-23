@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bgypwqlh77w4d"]
+
+[ext_resource type="Script" uid="uid://bctlso67qp6t7" path="res://crossbow/bolt.gd" id="1_no32s"]
+[ext_resource type="Texture2D" uid="uid://dxlq87yoep0ld" path="res://assets/bolt.png" id="2_4y66c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bewd0"]
+size = Vector2(320, 40)
+
+[node name="Bolt" type="Area2D" unique_id=339689169 groups=["bolts"]]
+script = ExtResource("1_no32s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=589733800]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_bewd0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1285762971]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_4y66c")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1142023051]
+rect = Rect2(-16, -2, 32, 4)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

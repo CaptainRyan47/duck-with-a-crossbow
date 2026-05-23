@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://t5bfphul2ymb"]
+
+[ext_resource type="Texture2D" uid="uid://dn1lytjsonvo3" path="res://assets/bat.png" id="1_pb2o4"]
+[ext_resource type="Script" uid="uid://ojwr8olx1bmp" path="res://bat/bat.gd" id="1_tofr1"]
+[ext_resource type="PackedScene" uid="uid://c8c2m6e3e5kha" path="res://bat/swoop.tscn" id="3_vobq3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tofr1"]
+atlas = ExtResource("1_pb2o4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vobq3"]
+atlas = ExtResource("1_pb2o4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tubu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tofr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vobq3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3tecl"]
+radius = 7.0
+height = 26.0
+
+[node name="Bat" type="Area2D" unique_id=1964027444]
+script = ExtResource("1_tofr1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=182821813]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1tubu")
+autoplay = "default"
+frame = 1
+frame_progress = 0.45103496
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1167325013]
+rotation = 1.5707964
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_3tecl")
+
+[node name="Swoop" parent="." unique_id=998543064 instance=ExtResource("3_vobq3")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

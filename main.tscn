@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://1ho7sjnjtvu6" path="res://world.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dng1jmq4fcx30" path="res://main.gd" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dxqgj6lbdm5fp" path="res://duck.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://t5bfphul2ymb" path="res://bat.tscn" id="2_lquwl"]
-[ext_resource type="PackedScene" uid="uid://vpjf6tqjee03" path="res://crosshair.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dxqgj6lbdm5fp" path="res://duck/duck.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://t5bfphul2ymb" path="res://bat/bat.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://vpjf6tqjee03" path="res://crossbow/crosshair.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node" unique_id=475654386]
 script = ExtResource("1_1bvp3")

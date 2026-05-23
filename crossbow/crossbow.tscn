@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://wic6gmry4ded"]
+
+[ext_resource type="Texture2D" uid="uid://roons3cgolgx" path="res://assets/Crossbow-Sheet.png" id="1_2h8y4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drjl2"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74fj4"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iif3"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 1280, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frq6m"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 1920, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytsgw"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 2560, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg7gb"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 3200, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqu1c"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 3840, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7me0"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 4480, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jasb4"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 5120, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxdp4"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 5760, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4hlf"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 6400, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk1o3"]
+atlas = ExtResource("1_2h8y4")
+region = Rect2(0, 7040, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s0e8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drjl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74fj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iif3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frq6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytsgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg7gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqu1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7me0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jasb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxdp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4hlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk1o3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Crossbow" type="Node2D" unique_id=1929069618]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1195264221]
+position = Vector2(0.99999994, 0)
+sprite_frames = SubResource("SpriteFrames_0s0e8")
+frame = 1
+frame_progress = 0.6964606
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=362647565]
+position = Vector2(321, -55)
